@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+
+    <title>Document</title>
+    <style>
+      .swiper-container {
+        width: 600px;
+        height: 300px;
+      }
+      .button-group button {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 8px;
+        background: #333;
+        border-radius: 50%;
+        opacity: 0.25;
+        cursor: pointer;
+      }
+      .button-group button.selected {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <a
+          href="google.com"
+          class="swiper-slide"
+          aria-labelledby="button1"
+          tabindex="0"
+          >1</a
+        >
+        <a
+          href="swiper-slide"
+          class="carousel-cell"
+          aria-labelledby="button2"
+          tabindex="-1"
+          >2</a
+        >
+        <a
+          href="swiper-slide"
+          class="carousel-cell"
+          aria-labelledby="button3"
+          tabindex="-1"
+          >3</a
+        >
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+      var mySwiper = new Swiper(".swiper-container", {
+        // Optional parameters
+        direction: "vertical",
+        loop: true
+      });
+      $(".button-group").on("click", ".button", function() {
+        $(".button-group button").removeClass("selected");
+        var index = $(this).index();
+        $(".button-group button")
+          .eq(index)
+          .addClass("selected");
+        $(".main-carousel").flickity("select", index);
+      });
+    </script>
+  </body>
+</html>
