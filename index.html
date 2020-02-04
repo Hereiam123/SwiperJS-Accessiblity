@@ -52,10 +52,10 @@
           >3</a
         >
       </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -64,14 +64,14 @@
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script>
       var mySwiper = new Swiper(".swiper-container");
-      $(".button-group").on("click", ".button", function() {
+      /*$(".button-group").on("click", ".button", function() {
         $(".button-group button").removeClass("selected");
         var index = $(this).index();
         $(".button-group button")
           .eq(index)
           .addClass("selected");
         $(".main-carousel").flickity("select", index);
-      });
+      });*/
     </script>
   </body>
 </html>
