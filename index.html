@@ -71,6 +71,23 @@
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"
+        },
+        renderBullet: function(index, className) {
+          var attrName;
+          if (index == 0) {
+            attrName = "Button1";
+          } else if (index == 1) {
+            attrName = "Button2";
+          } else {
+            attrName = "Button3";
+          }
+          return (
+            '<button class="' +
+            className +
+            '" aria-label=""' +
+            attrName +
+            '"></button>'
+          );
         }
       });
       /*$(".button-group").on("click", ".button", function() {
