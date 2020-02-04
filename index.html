@@ -92,6 +92,12 @@
           prevEl: ".swiper-button-prev"
         }
       });
+      mySwiper.on("slideChange", function() {
+        $(".swiper-slide").attr("tabindex", "-1");
+        $(".swiper-slide")
+          .eq(mySwiper.activeIndex)
+          .attr("tabindex", "0");
+      });
       /*$(".button-group").on("click", ".button", function() {
         $(".button-group button").removeClass("selected");
         var index = $(this).index();
