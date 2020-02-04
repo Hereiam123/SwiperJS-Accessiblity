@@ -43,6 +43,7 @@
           class="swiper-slide"
           aria-label="Into 2"
           tabindex="-1"
+          aria-hidden="true"
           >2</a
         >
         <a
@@ -50,6 +51,7 @@
           class="swiper-slide"
           aria-label="Bold 3"
           tabindex="-1"
+          aria-hidden="true"
           >3</a
         >
       </div>
@@ -96,18 +98,14 @@
       });
       mySwiper.on("slideChange", function() {
         $(".swiper-slide").attr("tabindex", "-1");
+        $(".swiper-slide").attr("aria-hidden", "true");
         $(".swiper-slide")
           .eq(mySwiper.activeIndex)
           .attr("tabindex", "0");
+        $(".swiper-slide")
+          .eq(mySwiper.activeIndex)
+          .attr("aria-hidden", "false");
       });
-      /*$(".button-group").on("click", ".button", function() {
-        $(".button-group button").removeClass("selected");
-        var index = $(this).index();
-        $(".button-group button")
-          .eq(index)
-          .addClass("selected");
-        $(".main-carousel").flickity("select", index);
-      });*/
     </script>
   </body>
 </html>
